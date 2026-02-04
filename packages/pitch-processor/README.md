@@ -38,11 +38,11 @@ Install the new dev client and run the app.
 
 ```
 import { AudioContext } from "react-native-audio-api";
-import { MyProcessorNode, NativeAudioProcessingModule } from "pitch-processor";
+import { PitchProcessorNode, NativeAudioProcessingModule } from "pitch-processor";
 
 NativeAudioProcessingModule.injectCustomProcessorInstaller();
 const audioContext = new AudioContext();
-const processor = new MyProcessorNode(
+const processor = new PitchProcessorNode(
   audioContext,
   global.createCustomProcessorNode(audioContext.context)
 );

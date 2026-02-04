@@ -5,9 +5,9 @@ namespace audioapi {
     class BaseAudioContext;
     class AudioBus;
 
-    class MyProcessorNode : public AudioNode {
+    class PitchProcessorNode : public AudioNode {
     public:
-      explicit MyProcessorNode(std::shared_ptr<BaseAudioContext> context);
+      explicit PitchProcessorNode(std::shared_ptr<BaseAudioContext> context);
       double getGain() const;
       void setGain(double value);
 

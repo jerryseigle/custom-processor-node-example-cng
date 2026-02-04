@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MyProcessorNode.h"
+#include "PitchProcessorNode.h"
 #include <audioapi/HostObjects/AudioNodeHostObject.h>
 
 #include <memory>
@@ -9,10 +9,10 @@
 namespace audioapi {
 using namespace facebook;
 
-class MyProcessorNodeHostObject : public AudioNodeHostObject {
+class PitchProcessorNodeHostObject : public AudioNodeHostObject {
 public:
-  explicit MyProcessorNodeHostObject(
-      const std::shared_ptr<MyProcessorNode> &node);
+  explicit PitchProcessorNodeHostObject(
+      const std::shared_ptr<PitchProcessorNode> &node);
 
   JSI_PROPERTY_GETTER_DECL(gain);
   JSI_PROPERTY_SETTER_DECL(gain);

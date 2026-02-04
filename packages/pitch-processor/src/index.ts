@@ -1,3 +1,3 @@
 export { default as NativeAudioProcessingModule } from "./NativeAudioProcessingModule";
-export { MyProcessorNode } from "./MyProcessorNode";
-export type { IMyProcessorNode } from "./MyProcessorNode";
+export { PitchProcessorNode } from "./PitchProcessorNode";
+export type { IPitchProcessorNode } from "./PitchProcessorNode";

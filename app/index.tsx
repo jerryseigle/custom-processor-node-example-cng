@@ -2,13 +2,13 @@ import React from "react";
 import { Button, View } from "react-native";
 import { AudioContext, AudioManager } from "react-native-audio-api";
 import {
-  MyProcessorNode,
+  PitchProcessorNode,
   NativeAudioProcessingModule,
 } from "pitch-processor";
 
 export default function App() {
   const audioContextRef = React.useRef<AudioContext | null>(null);
-  const processorRef = React.useRef<MyProcessorNode | null>(null);
+  const processorRef = React.useRef<PitchProcessorNode | null>(null);
   const [gain, setGain] = React.useState(0.5);
 
   const handlePlay = async () => {
@@ -29,7 +29,7 @@ export default function App() {
     const playerNode = audioContext.createBufferSource();
     playerNode.buffer = audioBuffer;
 
-    const processor = new MyProcessorNode(
+    const processor = new PitchProcessorNode(
       audioContext,
       global.createCustomProcessorNode(audioContext.context),
     );

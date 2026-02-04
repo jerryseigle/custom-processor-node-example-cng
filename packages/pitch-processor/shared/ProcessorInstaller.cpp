@@ -1,6 +1,6 @@
 #include "ProcessorInstaller.h"
-#include "MyProcessorNode.h"
-#include "MyProcessorNodeHostObject.h"
+#include "PitchProcessorNode.h"
+#include "PitchProcessorNodeHostObject.h"
 #include <audioapi/HostObjects/BaseAudioContextHostObject.h>
 
 namespace pitchprocessor {
@@ -17,9 +17,9 @@ void InstallCustomProcessor(facebook::jsi::Runtime &runtime) {
             object.getHostObject<audioapi::BaseAudioContextHostObject>(runtime);
         if (context != nullptr) {
           auto node =
-              std::make_shared<audioapi::MyProcessorNode>(context->context_);
+              std::make_shared<audioapi::PitchProcessorNode>(context->context_);
           auto nodeHostObject =
-              std::make_shared<audioapi::MyProcessorNodeHostObject>(node);
+              std::make_shared<audioapi::PitchProcessorNodeHostObject>(node);
           return facebook::jsi::Object::createFromHostObject(runtime,
                                                              nodeHostObject);
         }

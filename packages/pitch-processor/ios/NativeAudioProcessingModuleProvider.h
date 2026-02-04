@@ -4,11 +4,11 @@
 #import <pitchprocessor/pitchprocessor.h>
 #import <ReactCommon/RCTTurboModuleWithJSIBindings.h>
 
-@interface PitchProcessorModule : NSObject <NativeAudioProcessingModuleSpec, RCTTurboModuleWithJSIBindings>
+@interface NativeAudioProcessingModuleProvider : NSObject <NativeAudioProcessingModuleSpec, RCTTurboModuleWithJSIBindings>
 #else
 #import <React/RCTBridgeModule.h>
 
-@interface PitchProcessorModule : NSObject <RCTBridgeModule>
+@interface NativeAudioProcessingModuleProvider : NSObject <RCTBridgeModule>
 #endif
 
 @end

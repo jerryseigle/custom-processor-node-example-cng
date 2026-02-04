@@ -1,4 +1,4 @@
-#import "PitchProcessorModule.h"
+#import "NativeAudioProcessingModuleProvider.h"
 
 #import <React/RCTBridgeModule.h>
 #import <memory>
@@ -9,12 +9,12 @@
 #endif
 
 #ifdef RCT_NEW_ARCH_ENABLED
-@implementation PitchProcessorModule {
+@implementation NativeAudioProcessingModuleProvider {
   facebook::jsi::Runtime *_runtime;
   BOOL _jsiInstalled;
 }
 #else
-@implementation PitchProcessorModule
+@implementation NativeAudioProcessingModuleProvider
 #endif
 
 RCT_EXPORT_MODULE(NativeAudioProcessingModule)

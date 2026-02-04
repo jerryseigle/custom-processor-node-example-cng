@@ -1,23 +1,23 @@
-#include "MyProcessorNode.h"
+#include "PitchProcessorNode.h"
 #include <audioapi/core/BaseAudioContext.h>
 #include <audioapi/utils/AudioBus.h>
 #include <audioapi/utils/AudioArray.h>
 
 namespace audioapi {
-    MyProcessorNode::MyProcessorNode(std::shared_ptr<BaseAudioContext> context)
+    PitchProcessorNode::PitchProcessorNode(std::shared_ptr<BaseAudioContext> context)
         : AudioNode(std::move(context)), gain(0.5) {
         isInitialized_ = true;
     }
 
-    double MyProcessorNode::getGain() const {
+    double PitchProcessorNode::getGain() const {
       return gain;
     }
 
-    void MyProcessorNode::setGain(double value) {
+    void PitchProcessorNode::setGain(double value) {
       gain = value;
     }
 
-    std::shared_ptr<AudioBus> MyProcessorNode::processNode(const std::shared_ptr<AudioBus> &bus,
+    std::shared_ptr<AudioBus> PitchProcessorNode::processNode(const std::shared_ptr<AudioBus> &bus,
                                     int framesToProcess) {
       for (int channel = 0; channel < bus->getNumberOfChannels(); ++channel) {
         auto *audioArray = bus->getChannel(channel);
