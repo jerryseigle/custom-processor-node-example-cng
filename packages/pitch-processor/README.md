@@ -149,7 +149,7 @@ afterEvaluate {
 
 ## C++ Integration
 
-The native C++ sources live in `cpp/` and are built via:
+The native C++ sources live in `shared/` and are built via:
 
 - Android: `android/CMakeLists.txt`
 

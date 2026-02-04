@@ -17,11 +17,11 @@ Pod::Spec.new do |s|
 
   s.source_files = [
     "ios/**/*.{h,m,mm}",
-    "cpp/**/*.{h,cpp}",
+    "shared/**/*.{h,cpp}",
     "build/generated/ios/**/*.{h,m,mm,cpp}"
   ]
 
-  s.header_mappings_dir = "cpp"
+  s.header_mappings_dir = "shared"
   s.header_dir = "pitchprocessor"
 
   install_modules_dependencies(s)
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
     "HEADER_SEARCH_PATHS" => [
       '"$(PODS_TARGET_SRCROOT)"',
-      '"$(PODS_TARGET_SRCROOT)/cpp"',
+      '"$(PODS_TARGET_SRCROOT)/shared"',
       '"$(PODS_TARGET_SRCROOT)/build/generated/ios"'
     ].join(' '),
     "CLANG_CXX_LANGUAGE_STANDARD" => "c++20"
