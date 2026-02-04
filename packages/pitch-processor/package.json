@@ -1,0 +1,38 @@
+{
+  "name": "pitch-processor",
+  "version": "0.1.0",
+  "description": "Custom pitch processor TurboModule for react-native-audio-api",
+  "main": "src/index.ts",
+  "react-native": "src/index.ts",
+  "types": "src/index.ts",
+  "files": [
+    "android",
+    "app.plugin.js",
+    "react-native.config.js",
+    "specs",
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "react-native",
+    "audio",
+    "turbo-module"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-audio-api": "*"
+  },
+  "devDependencies": {
+    "@expo/config-plugins": "^9.0.0"
+  },
+  "codegenConfig": {
+    "name": "pitchprocessor",
+    "type": "modules",
+    "jsSrcsDir": "specs",
+    "android": {
+      "javaPackageName": "com.pitchprocessor"
+    }
+  }
+}
