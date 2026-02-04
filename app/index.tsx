@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, View } from "react-native";
-import { AudioContext } from "react-native-audio-api";
+import { AudioContext, AudioManager } from "react-native-audio-api";
 import {
   MyProcessorNode,
   NativeAudioProcessingModule,
@@ -13,7 +13,11 @@ export default function App() {
 
   const handlePlay = async () => {
     NativeAudioProcessingModule.injectCustomProcessorInstaller();
-    const audioContext = new AudioContext();
+    await AudioManager.setAudioSessionActivity(true);
+    const preferredSampleRate = AudioManager.getDevicePreferredSampleRate();
+    const audioContext = new AudioContext({
+      sampleRate: preferredSampleRate > 0 ? preferredSampleRate : 48000,
+    });
     audioContextRef.current = audioContext;
 
     const audioBuffer = await fetch(

@@ -6,8 +6,11 @@
   "react-native": "src/index.ts",
   "types": "src/index.ts",
   "files": [
+    "cpp",
     "android",
+    "ios",
     "app.plugin.js",
+    "pitch-processor.podspec",
     "react-native.config.js",
     "specs",
     "src",

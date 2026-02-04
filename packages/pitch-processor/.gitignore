@@ -1,2 +1,4 @@
 node_modules/
 android/build/
+ios/build/
+build/generated/

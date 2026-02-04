@@ -2,7 +2,7 @@
 
 Custom pitch processor TurboModule built on top of `react-native-audio-api`.
 
-This package is designed to work with Expo development builds and EAS. Native changes are applied via the config plugin, so you should not have to manually edit `android/` unless you are intentionally bypassing Expo’s plugin system.
+This package is designed to work with Expo development builds and EAS. Native changes are applied via the config plugin on Android, so you should not have to manually edit `android/` unless you are intentionally bypassing Expo’s plugin system.
 
 ## Install (Expo / EAS)
 
@@ -32,6 +32,7 @@ eas build --profile development --platform android
 ```
 
 Install the new dev client and run the app.
+
 
 ## Usage
 
@@ -67,7 +68,7 @@ This means the app binary does not include native modules. Common causes:
 
 Fix: rebuild the dev client with EAS and reinstall.
 
-### 2) Missing `.so` or CMake errors
+### 2) Missing `.so` or CMake errors (Android)
 This usually means `react-native-audio-api` did not build before this package’s CMake step.
 
 What to check:
@@ -83,6 +84,14 @@ This means codegen didn’t run before CMake.
 What to check:
 - Plugin applied.
 - Clean rebuild after codegen changes.
+
+### 4) iOS build errors about missing `pitchprocessor.h`
+This means iOS codegen output wasn’t generated or headers aren’t on the search path.
+
+What to check:
+- You rebuilt the dev client (EAS or local) after native changes.
+- The podspec is present (`pitch-processor.podspec`) and autolinking is enabled.
+- Clean the iOS build folder and rebuild.
 
 ## Manual Android Setup (No Expo)
 
@@ -140,4 +149,8 @@ afterEvaluate {
 
 ## C++ Integration
 
-The native C++ sources live in `android/cpp` and are built via the module CMake file in `android/CMakeLists.txt`. The CMake file links against `react-native-audio-api`’s shared library and the React Native C++ stack.
+The native C++ sources live in `cpp/` and are built via:
+
+- Android: `android/CMakeLists.txt`
+
+Both platforms compile the same shared C++ sources.

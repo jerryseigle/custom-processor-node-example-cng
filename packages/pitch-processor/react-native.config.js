@@ -5,6 +5,9 @@ module.exports = {
         cmakeListsPath: "CMakeLists.txt",
         cxxModuleHeaderName: "NativeAudioProcessingModule",
       },
+      ios: {
+        podspecPath: "pitch-processor.podspec",
+      },
     },
   },
 };
