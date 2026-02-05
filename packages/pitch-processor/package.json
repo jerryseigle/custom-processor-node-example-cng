@@ -1,6 +1,6 @@
 {
   "name": "pitch-processor",
-  "version": "0.1.0",
+  "version": "0.11.3",
   "description": "Custom pitch processor TurboModule for react-native-audio-api",
   "main": "src/index.ts",
   "react-native": "src/index.ts",
